@@ -88,7 +88,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top" />
+                          Opacity="0.5" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top" />
 
                     </Border>
 
@@ -132,7 +132,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="-2,0,0,0" HorizontalAlignment="Left"/>
 
                     </Border>
@@ -239,7 +239,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                          Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Center" 
                           />
 
                     </Border>
@@ -288,7 +288,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="0,0,0,0"/>
 
                     </Border>
@@ -345,7 +345,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,0,0"/>
 
                     </Border>
@@ -412,7 +412,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
                             <Line.RenderTransform>
                                 <TransformGroup>
@@ -476,7 +476,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,8,0"/>
 
                     </Border>
@@ -525,7 +525,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,0,0"/>
 
                     </Border>
@@ -575,7 +575,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,3,0"/>
 
                     </Border>
@@ -623,7 +623,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,3,0"/>
 
                     </Border>
@@ -700,7 +700,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,3,0"/>
 
                     </Border>
@@ -756,7 +756,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,0,0"/>
 
                     </Border>
@@ -845,7 +845,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill"/>
 
                     </Border>
@@ -893,7 +893,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill"/>
 
                     </Border>
@@ -1017,7 +1017,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill"/>
 
                     </Border>
@@ -1065,7 +1065,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill"/>
 
                     </Border>
@@ -1131,7 +1131,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Triangle" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,0,0"/>
 
                     </Border>
@@ -1228,7 +1228,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="0,0,3,0"/>
 
                     </Border>
@@ -1252,10 +1252,8 @@
                 </Image>
             </Canvas>
             <Canvas>
-                <local:FanControl x:Name="fanControl"
-                  Effect="{StaticResource CyanGlowEffect}" FanValue="3" HorizontalAlignment="Left" Width="59" Canvas.Left="412" Canvas.Top="90" Height="76" VerticalAlignment="Center"/>
-                <local:FanControl x:Name="fanControl1"
-                  Effect="{StaticResource CyanGlowEffect}" FanValue="3" HorizontalAlignment="Center" Width="58" Canvas.Left="348" Canvas.Top="371" Height="73" VerticalAlignment="Top"/>
+                <local:FanControl x:Name="fanControl" FanValue="3" HorizontalAlignment="Left" Width="59" Canvas.Left="412" Canvas.Top="90" Height="76" VerticalAlignment="Center"/>
+                <local:FanControl x:Name="fanControl1" FanValue="3" HorizontalAlignment="Center" Width="58" Canvas.Left="348" Canvas.Top="371" Height="73" VerticalAlignment="Top"/>
                 <control:ToggleImageControl 
                     x:Name="toggleControl"
                     OnImageSource="{StaticResource OnImage}"
@@ -1313,7 +1311,7 @@
                           StrokeDashCap="Round" 
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
-                          Opacity="0.85" 
+                          Opacity="0.5" 
                           Stretch="Fill" Margin="8,0,0,0" HorizontalAlignment="Left"/>
 
                     </Border>
@@ -1444,7 +1442,7 @@
                   StrokeDashCap="Round" 
                   StrokeStartLineCap="Round" 
                   StrokeEndLineCap="Round" 
-                  Opacity="0.85" 
+                  Opacity="0.5" 
                   Stretch="Fill" HorizontalAlignment="Left" Width="77" Margin="64,0,0,58">
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1466,7 +1464,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="77" Margin="109,112,0,0">
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1488,7 +1486,7 @@
                   StrokeDashCap="Round" 
                   StrokeStartLineCap="Round" 
                   StrokeEndLineCap="Round" 
-                  Opacity="0.85" 
+                  Opacity="0.5" 
                   Stretch="Fill" HorizontalAlignment="Left" Width="77" Margin="25,0,0,58">
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1527,7 +1525,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="82" Margin="48,67,0,0" Grid.Row="4" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1549,7 +1547,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="83" Margin="88,67,0,0" Grid.Row="4" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1571,7 +1569,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Center" Width="47" Margin="0,4,0,0" Grid.Row="1" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1593,7 +1591,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="48" Margin="196,0,0,0" Grid.Row="2" Height="1" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1615,7 +1613,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="79" Margin="118,10,0,0" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1649,7 +1647,7 @@
            StrokeDashCap="Round" 
            StrokeStartLineCap="Round" 
            StrokeEndLineCap="Round" 
-           Opacity="0.85" 
+           Opacity="0.5" 
            Width="30"
            Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="50,0,0,54">
                     <Line.RenderTransform>
@@ -1686,7 +1684,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="24"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="163,0,0,111">
                     <Line.RenderTransform>
@@ -1709,7 +1707,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="25"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="115,0,0,111">
                     <Line.RenderTransform>
@@ -1732,7 +1730,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="25"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="80,0,0,111">
                     <Line.RenderTransform>
@@ -1755,7 +1753,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="25"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="11,0,0,111">
                     <Line.RenderTransform>
@@ -1778,7 +1776,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="69"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="24,0,0,98">
                     <Line.RenderTransform>
@@ -1803,7 +1801,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="91"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="56,0,0,106">
                     <Line.RenderTransform>
@@ -1826,7 +1824,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="91"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="-36,0,0,105">
                     <Line.RenderTransform>
@@ -1849,7 +1847,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="90"
                 Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="11,0,0,60">
                     <Line.RenderTransform>
@@ -1890,7 +1888,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="34"  RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="-105,-120,0,0">
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -1912,7 +1910,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="28"
                 Stretch="Fill" Margin="199,49,0,0" RenderTransformOrigin="0.5,0.5" Height="1" HorizontalAlignment="Left">
                     <Line.RenderTransform>
@@ -1935,7 +1933,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="28"
                 Stretch="Fill" Margin="156,48,0,0" RenderTransformOrigin="0.5,0.5" Height="1" HorizontalAlignment="Left">
                     <Line.RenderTransform>
@@ -1958,7 +1956,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="28"
                 Stretch="Fill" Margin="115,48,0,0" RenderTransformOrigin="0.5,0.5" Height="1" HorizontalAlignment="Left">
                     <Line.RenderTransform>
@@ -1981,7 +1979,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="34"  RenderTransformOrigin="0.5,0.5" Height="4" HorizontalAlignment="Left" Margin="-167,-120,0,0">
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -2003,7 +2001,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Stretch="Fill" HorizontalAlignment="Left" Width="61" Margin="13,30,0,0" >
                     <Line.RenderTransform>
                         <TransformGroup>
@@ -2042,7 +2040,7 @@
   StrokeDashCap="Round" 
   StrokeStartLineCap="Round" 
   StrokeEndLineCap="Round" 
-  Opacity="0.85" 
+  Opacity="0.5" 
   Width="61"
   Stretch="Fill" Margin="-22,0,0,133" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left">
                     <Line.RenderTransform>
@@ -2065,7 +2063,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="64"
                 Stretch="Fill" Margin="15,0,0,134" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                     <Line.RenderTransform>
@@ -2088,7 +2086,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="64"
                 Stretch="Fill" Margin="4,0,0,133" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.Column="1">
                     <Line.RenderTransform>
@@ -2111,7 +2109,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="32"
                 Stretch="Fill" Margin="45,0,0,116" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.Column="1">
                     <Line.RenderTransform>
@@ -2134,7 +2132,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="32"
                 Stretch="Fill" Margin="108,0,0,115" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.Column="1">
                     <Line.RenderTransform>
@@ -2157,7 +2155,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="21"
                 Stretch="Fill" Margin="61,0,0,133" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.Column="1">
                     <Line.RenderTransform>
@@ -2180,7 +2178,7 @@
                 StrokeDashCap="Round" 
                 StrokeStartLineCap="Round" 
                 StrokeEndLineCap="Round" 
-                Opacity="0.85" 
+                Opacity="0.5" 
                 Width="19"
                 Stretch="Fill" Margin="105,0,0,133" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Grid.Column="1">
                     <Line.RenderTransform>

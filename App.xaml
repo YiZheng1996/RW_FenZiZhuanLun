@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:GJCS25004_分子筛转轮动态测试系统大屏"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- 引入 2.5D 科技大屏样式库 -->
+                <ResourceDictionary Source="Styles3D.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

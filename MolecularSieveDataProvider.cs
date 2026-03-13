@@ -183,8 +183,8 @@ namespace GJCS25004_分子筛转轮动态测试系统大屏
         /// 初始化分子筛转轮系统OPC数据提供器
         /// </summary>opc.tcp://192.168.0.80:49320
         /// <param name="serverUrl">OPC UA服务器地址</param>
-        //public MolecularSieveDataProvider( string serverUrl = "opc.tcp://192.168.0.80:49320" )
-        public MolecularSieveDataProvider( string serverUrl = "opc.tcp://192.168.0.211:49320")
+        //public MolecularSieveDataProvider( string serverUrl = "opc.tcp://192.168.0.80:49320" ) //现场使用地址
+        public MolecularSieveDataProvider( string serverUrl = "opc.tcp://127.0.0.1:49320") //本地测试使用
             : base( serverUrl , true )
         {
             // 注册所有点位

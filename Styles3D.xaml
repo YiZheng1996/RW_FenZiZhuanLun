@@ -1,0 +1,224 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+    ═══════════════════════════════════════════════════════════
+      分子筛转轮动态测试系统  —  2.5D 科技大屏样式库
+      文件：Styles3D.xaml
+      说明：纯外观样式，不改变任何功能逻辑与数据绑定
+      使用：在 App.xaml 的 MergedDictionaries 中引用即可
+    ═══════════════════════════════════════════════════════════
+    -->
+
+    <!-- ══════════════════════════════════════════
+         【公共画刷资源】统一色彩体系
+         光源方向：左上45°  亮面=左/上  暗面=右/下
+    ══════════════════════════════════════════ -->
+
+    <!-- 主背景：更深更纯净的宇宙黑 -->
+    <RadialGradientBrush x:Key="MainBackgroundBrush" GradientOrigin="0.5,0.4" Center="0.5,0.4" RadiusX="0.7" RadiusY="0.7">
+        <GradientStop Color="#FF060D16" Offset="0"/>
+        <GradientStop Color="#FF0A1A2C" Offset="0.5"/>
+        <GradientStop Color="#FF030810" Offset="1"/>
+    </RadialGradientBrush>
+
+    <!-- 管道槽：3D圆管深底色 -->
+    <LinearGradientBrush x:Key="PipeSlotBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF061520" Offset="0"/>
+        <GradientStop Color="#FF0A2030" Offset="0.5"/>
+        <GradientStop Color="#FF061520" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 管道3D渐变：模拟圆管截面光感 -->
+    <LinearGradientBrush x:Key="Pipe3DBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF0D3A50" Offset="0"/>
+        <GradientStop Color="#FF00B8D0" Offset="0.22"/>
+        <GradientStop Color="#FF006878" Offset="0.55"/>
+        <GradientStop Color="#FF003040" Offset="0.82"/>
+        <GradientStop Color="#FF001420" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 管道高光：顶部白色反光条 -->
+    <LinearGradientBrush x:Key="PipeHighlightBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#00FFFFFF" Offset="0"/>
+        <GradientStop Color="#28FFFFFF" Offset="0.25"/>
+        <GradientStop Color="#28FFFFFF" Offset="0.75"/>
+        <GradientStop Color="#00FFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 数据卡片主体 -->
+    <LinearGradientBrush x:Key="DataCardBodyBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF142030" Offset="0"/>
+        <GradientStop Color="#FF0B1A28" Offset="0.5"/>
+        <GradientStop Color="#FF071020" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 数据卡片投影底色 -->
+    <SolidColorBrush x:Key="DataCardShadowBrush" Color="#FF000A14"/>
+
+    <!-- 标题栏渐变 -->
+    <LinearGradientBrush x:Key="TitleBarBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF0C2236" Offset="0"/>
+        <GradientStop Color="#FF071628" Offset="0.6"/>
+        <GradientStop Color="#FF040E1C" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 标题栏顶部高光线 -->
+    <LinearGradientBrush x:Key="TitleTopHighlightBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#0000B8D8" Offset="0"/>
+        <GradientStop Color="#5000B8D8" Offset="0.2"/>
+        <GradientStop Color="#6600C8E8" Offset="0.5"/>
+        <GradientStop Color="#5000B8D8" Offset="0.8"/>
+        <GradientStop Color="#0000B8D8" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- 扫描线Tile画刷（背景网格纹理，增加景深感） -->
+    <DrawingBrush x:Key="ScanLineBrush" TileMode="Tile"
+                  Viewport="0,0,1,0.0125" ViewportUnits="RelativeToBoundingBox">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="#07002840">
+                <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,0.5"/>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <!-- ══════════════════════════════════════════
+         【TextBox 数据卡片样式】
+         功能保留：IsReadOnly、Text绑定、Name均不变
+         外观：3D卡片 = 投影层 + 左彩边 + 主体渐变 + 顶部高光
+    ══════════════════════════════════════════ -->
+    <Style TargetType="TextBox">
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="#00D4E8"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="CaretBrush" Value="Transparent"/>
+        <Setter Property="SelectionBrush" Value="Transparent"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <!-- 层1：底部投影（右下偏移2px，制造厚度感） -->
+                        <Border
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Margin="2,2,0,0"
+                            CornerRadius="3"
+                            Background="{StaticResource DataCardShadowBrush}"
+                            Opacity="0.85"/>
+
+                        <!-- 层2：左侧彩色立体边（模拟卡片厚度侧面） -->
+                        <Border
+                            Width="3"
+                            Margin="0,1,0,1"
+                            HorizontalAlignment="Left"
+                            CornerRadius="2,0,0,2"
+                            Opacity="0.9">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="#FF00C8E0" Offset="0"/>
+                                    <GradientStop Color="#FF007890" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+
+                        <!-- 层3：主体卡片（渐变+边框） -->
+                        <Border
+                            Margin="0,0,2,2"
+                            CornerRadius="0,3,3,0"
+                            BorderThickness="0,0.8,0.8,0"
+                            BorderBrush="#55007890"
+                            Background="{StaticResource DataCardBodyBrush}">
+                            <!-- 层4：顶部高光线 -->
+                            <Border
+                                BorderThickness="0,0.8,0,0"
+                                CornerRadius="0,3,0,0"
+                                Margin="0"
+                                BorderBrush="#3300C8E0">
+                                <!-- 内容区域 -->
+                                <ScrollViewer
+                                    x:Name="PART_ContentHost"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- Trigger：标签文字（不含数值）用淡青色 -->
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property="Cursor" Value="Arrow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- ══════════════════════════════════════════
+         【管道槽 Border 样式】
+         WPF中Border不能直接用TargetType Style匹配具体实例，
+         提供画刷资源，在MainWindow.xaml通过资源替换统一引用
+    ══════════════════════════════════════════ -->
+
+    <!-- 管道槽外层背景（替换原 #1A3550/#254A68 的LinearGradient） -->
+    <LinearGradientBrush x:Key="PipeOuterSlotBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF040E1A" Offset="0"/>
+        <GradientStop Color="#FF081828" Offset="0.5"/>
+        <GradientStop Color="#FF040E1A" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- ══════════════════════════════════════════
+         【Rectangle 全局背景样式】
+         通过 x:Key 方式，在 MainWindow 替换背景矩形的 Fill
+    ══════════════════════════════════════════ -->
+
+    <!-- ══════════════════════════════════════════
+         【DropShadowEffect 资源】
+         统一管理各控件发光效果，方便整体调节
+    ══════════════════════════════════════════ -->
+
+    <!-- 青色发光：风机、运行中的阀门 -->
+    <DropShadowEffect x:Key="CyanGlowEffect"
+                      Color="#00C8E0"
+                      BlurRadius="14"
+                      ShadowDepth="0"
+                      Opacity="0.75"/>
+
+    <!-- 绿色发光：正常状态指示 -->
+    <DropShadowEffect x:Key="GreenGlowEffect"
+                      Color="#00E8A0"
+                      BlurRadius="10"
+                      ShadowDepth="0"
+                      Opacity="0.65"/>
+
+    <!-- 弱发光：标题文字 -->
+    <DropShadowEffect x:Key="TitleGlowEffect"
+                      Color="#00C8FF"
+                      BlurRadius="8"
+                      ShadowDepth="0"
+                      Opacity="0.70"/>
+
+    <!-- 下投影：卡片/面板向下投影 -->
+    <DropShadowEffect x:Key="CardDropShadow"
+                      Color="#FF000810"
+                      BlurRadius="10"
+                      ShadowDepth="4"
+                      Direction="270"
+                      Opacity="0.85"/>
+
+    <!-- 面板内阴影（深色外框用） -->
+    <DropShadowEffect x:Key="PanelInsetShadow"
+                      Color="#FF000810"
+                      BlurRadius="6"
+                      ShadowDepth="2"
+                      Direction="315"
+                      Opacity="0.70"/>
+
+</ResourceDictionary>
