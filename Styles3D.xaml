@@ -77,7 +77,7 @@
     <DrawingBrush x:Key="ScanLineBrush" TileMode="Tile"
                   Viewport="0,0,1,0.0125" ViewportUnits="RelativeToBoundingBox">
         <DrawingBrush.Drawing>
-            <GeometryDrawing Brush="#07002840">
+            <GeometryDrawing Brush="#14002840">
                 <GeometryDrawing.Geometry>
                     <RectangleGeometry Rect="0,0,1,0.5"/>
                 </GeometryDrawing.Geometry>
@@ -94,7 +94,9 @@
         <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="Foreground" Value="#00D4E8"/>
+        <Setter Property="Foreground"     Value="#00E5FF"/>
+        <Setter Property="FontSize"       Value="11"/>
+        <Setter Property="TextAlignment"  Value="Center"/>
         <Setter Property="FontFamily" Value="Arial"/>
         <Setter Property="CaretBrush" Value="Transparent"/>
         <Setter Property="SelectionBrush" Value="Transparent"/>

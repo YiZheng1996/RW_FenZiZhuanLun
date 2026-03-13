@@ -31,30 +31,42 @@
                 <!-- 内容区域 -->
             </Grid.RowDefinitions>
 
-            <!-- 然后放置背景元素，跨越所有行 -->
+            <!-- 主背景：深宇宙黑 + 扫描线纹理 -->
+            <Rectangle Grid.RowSpan="2" Panel.ZIndex="0"
+           Fill="{StaticResource MainBackgroundBrush}"/>
 
-            <Rectangle Grid.RowSpan="2" Panel.ZIndex="0">
-                <Rectangle.Fill>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#ff285173" Offset="0"/>
-                        <GradientStop Color="#ff244967" Offset="0.5"/>
-                        <GradientStop Color="#13164B" Offset="1"/>
-                    </RadialGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
+            <Rectangle Grid.RowSpan="2" Panel.ZIndex="1"
+           IsHitTestVisible="False"
+           Fill="{StaticResource ScanLineBrush}"
+           Opacity="1"/>
+
             <Image Grid.RowSpan="2" Panel.ZIndex="0" Stretch="UniformToFill" Source="Resources/Top and bottom frame.png" Width="800" Height="450" Margin="4,4,-4,-4"/>
             <!-- 定义行布局 -->
             <!-- 标题栏 Border（放置在第一行） -->
-            <Border 
-            Height="40" 
-            VerticalAlignment="Top">
-                <TextBlock Text="分子筛转轮动态测试系统看板" 
-                       FontSize="12" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       Foreground="White"/>
+            <Border Height="40" VerticalAlignment="Top"
+        Background="{StaticResource TitleBarBrush}"
+        Effect="{StaticResource CardDropShadow}">
+                <Grid>
+                    <!-- 顶部高光线 -->
+                    <Border Height="1" VerticalAlignment="Top"
+                Background="{StaticResource TitleTopHighlightBrush}"/>
+                    <!-- 底部分割线 -->
+                    <Border Height="1" VerticalAlignment="Bottom"
+                Background="#22004860"/>
+                    <!-- 标题文字 -->
+                    <TextBlock Text="分子筛转轮动态测试系统看板"
+                   FontSize="12"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#00E5FF">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="#00C8FF" BlurRadius="8" 
+                                  ShadowDepth="0" Opacity="0.70"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Grid>
             </Border>
-
 
             <!-- 其他内容（放置在第二行） -->
 
@@ -66,13 +78,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -106,13 +117,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -214,13 +224,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -262,13 +271,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -319,13 +327,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -386,13 +393,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -452,13 +458,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -499,13 +504,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -550,13 +554,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -597,13 +600,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -674,13 +676,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -731,13 +732,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -820,13 +820,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -868,13 +867,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -992,13 +990,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -1040,13 +1037,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -1106,13 +1102,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -1203,13 +1198,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -1252,10 +1246,30 @@
                 </Image>
             </Canvas>
             <Canvas>
-                <local:FanControl x:Name="fanControl"
-                  Effect="{StaticResource CyanGlowEffect}" FanValue="3" HorizontalAlignment="Left" Width="59" Canvas.Left="412" Canvas.Top="90" Height="76" VerticalAlignment="Center"/>
-                <local:FanControl x:Name="fanControl1"
-                  Effect="{StaticResource CyanGlowEffect}" FanValue="3" HorizontalAlignment="Center" Width="58" Canvas.Left="348" Canvas.Top="371" Height="73" VerticalAlignment="Top"/>
+                <!-- 风机1 -->
+                <Border Canvas.Left="404" Canvas.Top="88" Width="75" Height="80"
+                    CornerRadius="40"
+                    Background="Transparent">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
+                                      ShadowDepth="0" Opacity="0.6"/>
+                                </Border.Effect>
+                                <local:FanControl x:Name="fanControl"
+                    FanValue="3" Width="59" Height="76"/>
+                            </Border>
+
+                    <!-- 风机2 -->
+                    <Border Canvas.Left="340" Canvas.Top="369" Width="74" Height="77"
+                    CornerRadius="40"
+                    Background="Transparent">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
+                                      ShadowDepth="0" Opacity="0.6"/>
+                                </Border.Effect>
+                                <local:FanControl x:Name="fanControl1"
+                    FanValue="3" Width="58" Height="73"/>
+                </Border>
+                
                 <control:ToggleImageControl 
                     x:Name="toggleControl"
                     OnImageSource="{StaticResource OnImage}"
@@ -1287,13 +1301,12 @@
                     <Border.Background>
 
                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-
-                            <GradientStop Color="#a1c4fd" Offset="0.1"/>
-
-                            <GradientStop Color="#c2e9fb" Offset="0.5"/>
-
-                            <GradientStop Color="#a1c4fd" Offset="0.8"/>
-
+                            <GradientStop Color="#FF010A14" Offset="0"/>
+                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                            <GradientStop Color="#FF006878" Offset="0.55"/>
+                            <GradientStop Color="#FF003040" Offset="0.82"/>
+                            <GradientStop Color="#FF001420" Offset="1"/>
                         </LinearGradientBrush>
 
                     </Border.Background>
@@ -1402,10 +1415,12 @@
                     </Path.RenderTransform>
                     <Path.Fill>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Offset="0" Color="#a1c4fd"/>
-                            <GradientStop Offset="0.2" Color="#c2e9fb"/>
-                            <GradientStop Offset="0.5" Color="#c2e9fb"/>
-                            <GradientStop Offset="1" Color="#a1c4fd"/>
+                            <GradientStop Offset="0"    Color="#FF010A14"/>
+                            <GradientStop Offset="0.10" Color="#FF0D3A50"/>
+                            <GradientStop Offset="0.28" Color="#FF00B8D0"/>
+                            <GradientStop Offset="0.55" Color="#FF006878"/>
+                            <GradientStop Offset="0.82" Color="#FF003040"/>
+                            <GradientStop Offset="1"    Color="#FF001420"/>
                         </LinearGradientBrush>
                     </Path.Fill>
                 </Path>
@@ -1419,20 +1434,20 @@
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="170" />
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附入口温度" 
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附入口温度" 
                          Width="40"
                          Height="16"
-                         Margin="6,3,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6"                          Width="40"
-                         Height="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附入口湿度" Margin="46,3,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="TT301" Foreground="#364f6b"                          Width="40"
-                         Height="16" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="6,18,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="RH301" Foreground="#364f6b"                          Width="40"
-                         Height="16" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="46,18,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center"                          Width="40"
-                         Height="16" HorizontalContentAlignment="Center" Text="吸附入口压力" Margin="86,3,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="PT301" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"                          Width="40"
-                         Height="16" Text="" Margin="86,18,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                         Margin="6,3,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6"                          Width="40"
+                         Height="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附入口湿度" Margin="46,3,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="TT301" Foreground="#7ECFDE"                          Width="40"
+                         Height="16" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="6,18,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="RH301" Foreground="#7ECFDE"                          Width="40"
+                         Height="16" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="46,18,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center"                          Width="40"
+                         Height="16" HorizontalContentAlignment="Center" Text="吸附入口压力" Margin="86,3,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="PT301" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"                          Width="40"
+                         Height="16" Text="" Margin="86,18,0,0"     HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Line 
                   X1="0" Y1="0" 
                   X2="360" 
@@ -1511,10 +1526,10 @@
                     <RowDefinition Height="1.833"/>
                     <RowDefinition Height="108.417"/>
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Text="冷却温度(°)" Margin="0,14,214,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="冷却湿度" Margin="70,14,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="TT401" Foreground="#364f6b" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="26,29,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="RH401" Foreground="#364f6b" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="70,29,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Text="冷却温度(°)" Margin="0,14,214,0"     HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="冷却湿度" Margin="70,14,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="TT401" Foreground="#7ECFDE" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="26,29,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="RH401" Foreground="#7ECFDE" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="70,29,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <Line 
                 X1="0" Y1="0" 
@@ -1626,8 +1641,8 @@
                         </TransformGroup>
                     </Line.RenderTransform>
                 </Line>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="136,0,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="PDT801" Foreground="#364f6b" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="136,14,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="136,0,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="PDT801" Foreground="#7ECFDE" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="136,14,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
             <Grid Margin="599,108,-79,30" Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -1636,8 +1651,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="170" />
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="冷却出口温度" Margin="44,71,0,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Left" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox x:Name="TT601" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="44,87,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="冷却出口温度" Margin="44,71,0,0"     HorizontalAlignment="Left" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox x:Name="TT601" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="44,87,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Line 
            X1="0" Y1="0" 
            X2="{Binding ActualWidth, RelativeSource={RelativeSource Mode=Self}}" 
@@ -1670,10 +1685,10 @@
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="170" />
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附入口温度(°)" Margin="0,71,133,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox Name="TT602" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="107,86,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附入口温度(°)" Margin="0,71,85,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox x:Name="TT603" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="155,86,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附入口温度(°)" Margin="0,71,133,0"     HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox Name="TT602" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="107,86,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附入口温度(°)" Margin="0,71,85,0"     HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox x:Name="TT603" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="155,86,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <Line 
                 X1="0" Y1="0" 
@@ -1790,8 +1805,8 @@
                         </TransformGroup>
                     </Line.RenderTransform>
                 </Line>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="0,66,201,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox x:Name="PDT803" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="39,81,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="0,66,201,0"     HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox x:Name="PDT803" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="39,81,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Line 
                 X1="0" Y1="0" 
                 X2="360" 
@@ -1861,8 +1876,8 @@
                         </TransformGroup>
                     </Line.RenderTransform>
                 </Line>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="0,102,201,0" BorderBrush="#11999e" Background="#30e3ca" HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
-                <TextBox x:Name="PDT802_" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="39,117,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="0,102,201,0"     HorizontalAlignment="Right" Width="40" Height="16" VerticalAlignment="Top"/>
+                <TextBox x:Name="PDT802_" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="39,117,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
 
 
@@ -1873,12 +1888,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="170" />
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口温度(°)" Margin="108,5,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口湿度" Margin="149,5,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="TT501" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="108,20,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="RH501" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="149,20,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口压力" Margin="192,5,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="PT501" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="192,20,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口温度(°)" Margin="108,5,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口湿度" Margin="149,5,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="TT501" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="108,20,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="RH501" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="149,20,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="吸附出口压力" Margin="192,5,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="PT501" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="192,20,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Line 
                 X1="0" Y1="1" 
                 X2="360" 
@@ -2014,8 +2029,8 @@
                         </TransformGroup>
                     </Line.RenderTransform>
                 </Line>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压(°)" Margin="25,18,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="PDT501" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="25,33,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压(°)" Margin="25,18,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="PDT501" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="25,33,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
             <Grid Margin="235,272,215,-34" Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -2025,12 +2040,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="170" />
                 </Grid.RowDefinitions>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口温度(°)" Margin="-12,-27,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口湿度" Margin="27,-27,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                <TextBox Name="TT701" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="-12,-12,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Name="RH701" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="27,-12,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口压力" Margin="16,-27,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
-                <TextBox Name="PT701" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="16,-12,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口温度(°)" Margin="-12,-27,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口湿度" Margin="27,-27,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBox Name="TT701" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="-12,-12,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Name="RH701" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="27,-12,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="脱附出口压力" Margin="16,-27,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox Name="PT701" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="16,-12,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
                 <Line  
   X1="0" Y1="0" 
   X2="360" 
@@ -2192,8 +2207,8 @@
                         </TransformGroup>
                     </Line.RenderTransform>
                 </Line>
-                <TextBox Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="74,25,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
-                <TextBox Name="PDT701" Foreground="#364f6b" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="74,40,0,0" BorderBrush="#11999e" Background="#30e3ca" Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="74,25,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBox Name="PDT701" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="74,40,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
             </Grid>
         </Grid>
 
