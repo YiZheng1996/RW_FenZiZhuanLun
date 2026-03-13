@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Top and bottom frame.png" />
+    <None Remove="Resources\中国中车logo.png" />
+    <None Remove="Resources\共享脱附.png" />
+    <None Remove="Resources\冷却泵.png" />
+    <None Remove="Resources\右箭头.png" />
+    <None Remove="Resources\吸附.png" />
+    <None Remove="Resources\白色阀门.png" />
+    <None Remove="Resources\蓝色阀门.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="OpcUaHelper" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Top and bottom frame.png" />
+    <Resource Include="Resources\中国中车logo.png" />
+    <Resource Include="Resources\共享脱附.png" />
+    <Resource Include="Resources\冷却塔.png" />
+    <Resource Include="Resources\冷却泵.png" />
+    <Resource Include="Resources\右箭头.png" />
+    <Resource Include="Resources\吸附.png" />
+    <Resource Include="Resources\白色阀门.png" />
+    <Resource Include="Resources\蓝色阀门.png" />
+  </ItemGroup>
+
+</Project>

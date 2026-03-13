@@ -1,0 +1,9 @@
+﻿<Application x:Class="GJCS25004_分子筛转轮动态测试系统大屏.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GJCS25004_分子筛转轮动态测试系统大屏"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
