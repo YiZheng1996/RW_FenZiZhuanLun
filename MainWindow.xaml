@@ -35,10 +35,10 @@
             <Rectangle Grid.RowSpan="2" Panel.ZIndex="0"
            Fill="{StaticResource MainBackgroundBrush}"/>
 
-            <Rectangle Grid.RowSpan="2" Panel.ZIndex="1"
+            <Rectangle Panel.ZIndex="1"
            IsHitTestVisible="False"
            Fill="{StaticResource ScanLineBrush}"
-           Opacity="1"/>
+           Opacity="1" Cursor="" HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom"/>
 
             <Image Grid.RowSpan="2" Panel.ZIndex="0" Stretch="UniformToFill" Source="Resources/Top and bottom frame.png" Width="800" Height="450" Margin="4,4,-4,-4"/>
             <!-- 定义行布局 -->
@@ -111,8 +111,8 @@
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="190" Canvas.Top="250" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="303" Canvas.Top="250" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </Canvas>
-            
-            
+
+
             <Canvas>
                 <Border Canvas.Left="115" Canvas.Top="382" Width="364" HorizontalAlignment="Center" VerticalAlignment="Top" >
 
@@ -150,37 +150,33 @@
                     </Border>
 
                 </Border>
-                <!-- ★★★ 新增：左端弯头 ╰ border1竖直→border18水平 ★★★ -->
-                <!-- 管壁层 -->
-                <Path Canvas.Left="85" Canvas.Top="367"
-                    StrokeThickness="8"
-                    StrokeStartLineCap="Flat"
-                    StrokeEndLineCap="Flat"
-                    Data="M 0,0 A 15,15 0 0 1 15,15">
-                    <Path.Stroke>
-                        <LinearGradientBrush StartPoint="0.5,0"
-                             EndPoint="0.5,1">
-                            <GradientStop Color="#FF010A14" Offset="0"/>
-                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
-                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
-                            <GradientStop Color="#FF006878" Offset="0.55"/>
-                            <GradientStop Color="#FF003040" Offset="0.82"/>
-                            <GradientStop Color="#FF001420" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Path.Stroke>
-                </Path>
+                <!-- ╰ 弯头：向上→向左 -->
+                <Canvas Canvas.Left="105" Canvas.Top="372">
+                    <!-- 管壁层：MappingMode=Absolute 让渐变不因弧形变形 -->
+                    <Path StrokeThickness="8"
+                        StrokeStartLineCap="Flat" StrokeEndLineCap="Flat"
+                        Data="M 0,0 A 15,15 0 0 0 15,15">
+                        <Path.Stroke>
+                            <LinearGradientBrush MappingMode="Absolute"
+                                                 StartPoint="0,0" EndPoint="0,15">
+                                <GradientStop Color="#FF010A14" Offset="0"/>
+                                <GradientStop Color="#FF0D3A50" Offset="0.10"/>
+                                <GradientStop Color="#FF00B8D0" Offset="0.28"/>
+                                <GradientStop Color="#FF006878" Offset="0.55"/>
+                                <GradientStop Color="#FF003040" Offset="0.82"/>
+                                <GradientStop Color="#FF001420" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Path.Stroke>
+                    </Path>
 
-                <!-- 流体层（虚线动画） -->
-                <Path x:Name="elbowFluid18L"
-                        Canvas.Left="85" Canvas.Top="367"
-                        Stroke="#00a3af"
-                        StrokeThickness="5"
-                        Opacity="0.85"
-                        StrokeDashArray="2,3"
-                        StrokeDashCap="Round"
-                        StrokeStartLineCap="Round"
-                        StrokeEndLineCap="Round"
-                        Data="M 0,0 A 15,15 0 0 1 15,15"/>
+                    <!-- 流体层：颜色=#00EEFF, Opacity=1.0 和 liquidline18 完全一致 -->
+                    <Path x:Name="elbowFluid18L"
+                        Stroke="#00EEFF" StrokeThickness="5" Opacity="1.0"
+                        StrokeDashArray="2,3" StrokeDashCap="Round"
+                        StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                        Data="M 0,0 A 15,15 0 0 0 15,15"/>
+                </Canvas>
+
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="373" Canvas.Top="381" RenderTransformOrigin="0.028,0.467" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image.RenderTransform>
                         <TransformGroup>
@@ -244,7 +240,10 @@
             </Canvas>
 
             <Canvas>
-                <Border RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Canvas.Left="-33.5" Canvas.Top="239.1" VerticalAlignment="Top" >
+                <Border RenderTransformOrigin="0.5,0.5" 
+                        HorizontalAlignment="Left" 
+                        Canvas.Left="-33.5" Canvas.Top="232" 
+                        VerticalAlignment="Top" >
                     <Border.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -413,7 +412,7 @@
                 </Image>
             </Canvas>
             <Canvas>
-                <Border HorizontalAlignment="Left" Canvas.Left="445" Canvas.Top="260" VerticalAlignment="Center" >
+                <Border HorizontalAlignment="Left" Canvas.Left="445" Canvas.Top="255" VerticalAlignment="Center" >
                     <Border.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -439,7 +438,7 @@
                     <Border x:Name="border2" Margin="2" >
 
                         <Line x:Name="liquidline2" 
-                          Width="20"
+                          Width="25"
                           Height="6"
                           X1="0" Y1="0" 
                           X2="360" 
@@ -550,7 +549,7 @@
                     <Border x:Name="border4" Margin="2" >
 
                         <Line x:Name="liquidline4" 
-                          Width="43"
+                          Width="45"
                           Height="5"
                           X1="0" Y1="0" 
                           X2="{Binding ActualWidth, RelativeSource={RelativeSource Mode=Self}}" 
@@ -563,7 +562,7 @@
                           StrokeStartLineCap="Round" 
                           StrokeEndLineCap="Round" 
                           Opacity="1.0" 
-                          Stretch="Fill" Margin="8,0,0,0"/>
+                          Stretch="Fill" Margin="6,0,0,0" HorizontalAlignment="Left"/>
 
                     </Border>
 
@@ -981,10 +980,11 @@
                     <ModelVisual3D>
                         <ModelVisual3D.Content>
                             <Model3DGroup>
-                                <!-- Lights -->
-                                <AmbientLight Color="#a1c4fd" />
-                                <DirectionalLight Color="#c2e9fb" Direction="-1,-1,-1" />
-                                <DirectionalLight Color="#c2e9fb" Direction="1,1,-1" />
+                                <!-- Lights: 科技感冷色光源 -->
+                                <AmbientLight Color="#405060" />
+                                <DirectionalLight Color="#88CCDD" Direction="-1,-1,-1" />
+                                <DirectionalLight Color="#446688" Direction="1,1,-1" />
+                                <DirectionalLight Color="#55AACC" Direction="0,1,0.5" />
 
                                 <!-- Cylinder -->
                                 <GeometryModel3D>
@@ -994,7 +994,7 @@
                             TriangleIndices="0 1 13 0 13 12 1 2 14 1 14 13 2 3 15 2 15 14 3 4 16 3 16 15 4 5 17 4 17 16 5 6 18 5 18 17 6 7 19 6 19 18 7 8 20 7 20 19 8 9 21 8 21 20 9 10 22 9 22 21 10 11 23 10 23 22 11 0 12 11 12 23 12 13 14 12 14 15 12 15 16 12 16 17 12 17 18 12 18 19 12 19 20 12 20 21 12 21 22 12 22 23 0 11 10 0 10 9 0 9 8 0 8 7 0 7 6 0 6 5 0 5 4 0 4 3 0 3 2 0 2 1" />
                                     </GeometryModel3D.Geometry>
                                     <GeometryModel3D.Material>
-                                        <DiffuseMaterial Brush="#c2e9fb"/>
+                                        <DiffuseMaterial Brush="#1A3A4A"/>
                                     </GeometryModel3D.Material>
                                     <GeometryModel3D.Transform>
                                         <RotateTransform3D>
@@ -1267,7 +1267,10 @@
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="484" Canvas.Top="203" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="597" Canvas.Top="204" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="648" Canvas.Top="203" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Image Grid.RowSpan="2" Panel.ZIndex="0" Stretch="Fill" Source="/Resources/中国中车logo.png" Width="108" Height="107" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-14" Canvas.Top="-20" RenderTransformOrigin="0.5,0.5">
+                <Image Grid.RowSpan="2" Panel.ZIndex="0" Stretch="Fill" Source="/Resources/中国中车logo.png" Width="108" Height="107" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="-14" Canvas.Top="-20" RenderTransformOrigin="0.5,0.5" Opacity="0.75">
+                    <Image.Effect>
+                        <DropShadowEffect Color="#00C8E0" BlurRadius="12" ShadowDepth="0" Opacity="0.35"/>
+                    </Image.Effect>
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -1283,26 +1286,26 @@
                 <Border Canvas.Left="404" Canvas.Top="88" Width="75" Height="80"
                     CornerRadius="40"
                     Background="Transparent">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
+                    <Border.Effect>
+                        <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
                                       ShadowDepth="0" Opacity="0.6"/>
-                                </Border.Effect>
-                                <local:FanControl x:Name="fanControl"
+                    </Border.Effect>
+                    <local:FanControl x:Name="fanControl"
                     FanValue="3" Width="59" Height="76"/>
-                            </Border>
+                </Border>
 
-                    <!-- 风机2 -->
-                    <Border Canvas.Left="340" Canvas.Top="369" Width="74" Height="77"
+                <!-- 风机2 -->
+                <Border Canvas.Left="340" Canvas.Top="369" Width="74" Height="77"
                     CornerRadius="40"
                     Background="Transparent">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
+                    <Border.Effect>
+                        <DropShadowEffect Color="#00C8E0" BlurRadius="20" 
                                       ShadowDepth="0" Opacity="0.6"/>
-                                </Border.Effect>
-                                <local:FanControl x:Name="fanControl1"
+                    </Border.Effect>
+                    <local:FanControl x:Name="fanControl1"
                     FanValue="3" Width="58" Height="73"/>
                 </Border>
-                
+
                 <control:ToggleImageControl 
                     x:Name="toggleControl"
                     OnImageSource="{StaticResource OnImage}"

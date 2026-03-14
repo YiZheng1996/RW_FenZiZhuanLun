@@ -135,18 +135,25 @@ public partial class MainWindow : Window
 
             // 为每个条带创建一个随机颜色
             // 使用轻微的颜色变化，保持在同一色系中
-            byte baseR = 30;
-            byte baseG = 60;
-            byte baseB = 100;
+            byte baseR = 8;
+            byte baseG = 50;
+            byte baseB = 65;
 
-            Random rand = new Random( h );
+            Random rand = new Random(h);
             Color stripColor = Color.FromRgb(
-                (byte) (baseR + rand.Next( -30 , 30 )) ,
-                (byte) (baseG + rand.Next( -30 , 30 )) ,
-                (byte) (baseB + rand.Next( -30 , 30 ))
+                (byte)Math.Clamp(baseR + rand.Next(-5, 15), 0, 255),
+                (byte)Math.Clamp(baseG + rand.Next(-15, 30), 0, 255),
+                (byte)Math.Clamp(baseB + rand.Next(-15, 35), 0, 255)
             );
 
-            Material stripMaterial = new DiffuseMaterial( new SolidColorBrush( stripColor ) );
+            // 用 MaterialGroup 叠加漫反射+高光，让条带更有金属质感
+            var stripDiffuse = new DiffuseMaterial(new SolidColorBrush(stripColor));
+            var stripSpecular = new SpecularMaterial(new SolidColorBrush(Color.FromArgb(80, 0, 200, 230)), 40);
+            var stripMaterialGroup = new MaterialGroup();
+            stripMaterialGroup.Children.Add(stripDiffuse);
+            stripMaterialGroup.Children.Add(stripSpecular);
+            Material stripMaterial = stripMaterialGroup;
+
             GeometryModel3D stripModel = new GeometryModel3D( stripMesh , stripMaterial );
 
             // 添加背面材质
@@ -183,7 +190,13 @@ public partial class MainWindow : Window
         }
 
         // 为底部创建材质
-        Material bottomMaterial = new DiffuseMaterial( new SolidColorBrush( Color.FromRgb(196, 18, 48) ) );  // 品牌红 #C41230
+        var bottomDiffuse = new DiffuseMaterial(new SolidColorBrush(Color.FromRgb(140, 15, 38)));  // 更深的暗红
+        var bottomSpecular = new SpecularMaterial(new SolidColorBrush(Color.FromArgb(60, 255, 80, 80)), 30);
+        var bottomGroup = new MaterialGroup();
+        bottomGroup.Children.Add(bottomDiffuse);
+        bottomGroup.Children.Add(bottomSpecular);
+        Material bottomMaterial = bottomGroup;
+
         GeometryModel3D bottomModel = new GeometryModel3D( bottomMesh , bottomMaterial );
 
         // 将底部添加到旋转组
@@ -249,8 +262,16 @@ public partial class MainWindow : Window
             fan1Mesh.TriangleIndices.Add( i + 1 );
         }
 
-        // 为第一个扇形创建材质
-        Material fan1Material = new DiffuseMaterial( new SolidColorBrush( Color.FromRgb(232, 150, 58) ) );  // 脱附区 #E8963A
+        // 为第一个扇形创建材质 脱附区
+        var fan1Diffuse = new DiffuseMaterial(new SolidColorBrush(Color.FromRgb(200, 120, 35)));  // 稍微深一点的琥珀色
+        var fan1Emissive = new EmissiveMaterial(new SolidColorBrush(Color.FromArgb(25, 255, 160, 40)));  // 微弱自发光
+        var fan1Specular = new SpecularMaterial(new SolidColorBrush(Color.FromArgb(60, 255, 200, 100)), 35);
+        var fan1Group = new MaterialGroup();
+        fan1Group.Children.Add(fan1Diffuse);
+        fan1Group.Children.Add(fan1Emissive);
+        fan1Group.Children.Add(fan1Specular);
+        Material fan1Material = fan1Group;
+
         GeometryModel3D fan1Model = new GeometryModel3D( fan1Mesh , fan1Material );
         fan1Model.BackMaterial = fan1Material;
 
@@ -306,8 +327,16 @@ public partial class MainWindow : Window
             fan2Mesh.TriangleIndices.Add( i + 1 );
         }
 
-        // 为第二个扇形创建不同颜色的材质
-        Material fan2Material = new DiffuseMaterial( new SolidColorBrush( Color.FromRgb(58, 124, 175) ) );  // 冷却区 #3A7CAF
+        // 为第二个扇形创建不同颜色的材质 冷却区
+        var fan2Diffuse = new DiffuseMaterial(new SolidColorBrush(Color.FromRgb(0, 140, 180)));  // 科技青
+        var fan2Emissive = new EmissiveMaterial(new SolidColorBrush(Color.FromArgb(20, 0, 180, 220)));  // 微弱青色自发光
+        var fan2Specular = new SpecularMaterial(new SolidColorBrush(Color.FromArgb(70, 0, 220, 255)), 45);
+        var fan2Group = new MaterialGroup();
+        fan2Group.Children.Add(fan2Diffuse);
+        fan2Group.Children.Add(fan2Emissive);
+        fan2Group.Children.Add(fan2Specular);
+        Material fan2Material = fan2Group;
+
         GeometryModel3D fan2Model = new GeometryModel3D( fan2Mesh , fan2Material );
         fan2Model.BackMaterial = fan2Material;
 
@@ -363,8 +392,15 @@ public partial class MainWindow : Window
             fan3Mesh.TriangleIndices.Add( i + 1 );
         }
 
-        // 为第三个扇形创建不同颜色的材质
-        Material fan3Material = new DiffuseMaterial( new SolidColorBrush( Color.FromRgb(196, 18, 48) ) );  // 吸附区 品牌红 #C41230
+        // 为第三个扇形创建不同颜色的材质 吸附区
+        var fan3Diffuse = new DiffuseMaterial(new SolidColorBrush(Color.FromRgb(170, 20, 45)));  // 深红
+        var fan3Emissive = new EmissiveMaterial(new SolidColorBrush(Color.FromArgb(15, 255, 50, 50)));  // 微弱红色自发光
+        var fan3Specular = new SpecularMaterial(new SolidColorBrush(Color.FromArgb(50, 255, 100, 100)), 30);
+        var fan3Group = new MaterialGroup();
+        fan3Group.Children.Add(fan3Diffuse);
+        fan3Group.Children.Add(fan3Specular);
+        fan3Group.Children.Add(fan3Emissive);
+        Material fan3Material = fan3Group;
         GeometryModel3D fan3Model = new GeometryModel3D( fan3Mesh , fan3Material );
         fan3Model.BackMaterial = fan3Material;
 
@@ -372,9 +408,17 @@ public partial class MainWindow : Window
         staticGroup.Children.Add( fan3Model );
 
         // 设置光源
-        DirectionalLight directionalLight = new DirectionalLight( Colors.White , new Vector3D( -0.5 , -1 , -0.5 ) );
-        DirectionalLight secondLight = new DirectionalLight( Colors.White , new Vector3D( 0.5 , -0.7 , 0.5 ) );
-        AmbientLight ambientLight = new AmbientLight( Color.FromRgb( 80 , 80 , 80 ) );
+        // 主光：从左上方打下来的冷白光
+        DirectionalLight directionalLight = new DirectionalLight(
+            Color.FromRgb(180, 210, 230), new Vector3D(-0.5, -1, -0.5));
+        // 副光：从右侧补光，稍暗
+        DirectionalLight secondLight = new DirectionalLight(
+            Color.FromRgb(100, 140, 170), new Vector3D(0.5, -0.7, 0.5));
+        // 底光：从下方微弱补光，减少底部全黑
+        DirectionalLight bottomLight = new DirectionalLight(
+            Color.FromRgb(40, 80, 100), new Vector3D(0, 1, 0.3));
+        // 环境光：偏暗偏冷，保留对比度
+        AmbientLight ambientLight = new AmbientLight(Color.FromRgb(35, 50, 60));
 
         // 创建旋转部分的容器并应用旋转变换
         RotateTransform3D rotateTransform = new RotateTransform3D( rotation );
@@ -402,6 +446,11 @@ public partial class MainWindow : Window
         viewport3D.Children.Add( lightVisual1 );        // 主光源
         viewport3D.Children.Add( lightVisual2 );        // 辅助光源
         viewport3D.Children.Add( ambientVisual );       // 环境光
+
+        // 底部补光
+        ModelVisual3D bottomLightVisual = new ModelVisual3D();
+        bottomLightVisual.Content = bottomLight;
+        viewport3D.Children.Add( bottomLightVisual );
     }
 
     private void init()
@@ -486,8 +535,8 @@ public partial class MainWindow : Window
         _animationIds.Add( id18 );
 
         // 弯头流体动画（和直管保持同速同方向）
-        var elbowAnim18L = new DoubleAnimation(20, 0,
-            TimeSpan.FromSeconds(1.5))
+        var elbowAnim18L = new DoubleAnimation(-20, 0,
+            TimeSpan.FromSeconds(3))
         {
             RepeatBehavior = RepeatBehavior.Forever
         };
