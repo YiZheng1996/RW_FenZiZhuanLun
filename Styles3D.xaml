@@ -25,18 +25,18 @@
 
     <!-- 管道槽：3D圆管深底色 -->
     <LinearGradientBrush x:Key="PipeSlotBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FF061520" Offset="0"/>
-        <GradientStop Color="#FF0A2030" Offset="0.5"/>
-        <GradientStop Color="#FF061520" Offset="1"/>
+        <GradientStop Color="#FF0A2535" Offset="0"/>
+        <GradientStop Color="#FF103848" Offset="0.5"/>
+        <GradientStop Color="#FF0A2535" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- 管道3D渐变：模拟圆管截面光感 -->
     <LinearGradientBrush x:Key="Pipe3DBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-        <GradientStop Color="#FF0D3A50" Offset="0"/>
-        <GradientStop Color="#FF00B8D0" Offset="0.22"/>
-        <GradientStop Color="#FF006878" Offset="0.55"/>
-        <GradientStop Color="#FF003040" Offset="0.82"/>
-        <GradientStop Color="#FF001420" Offset="1"/>
+        <GradientStop Color="#FF006888" Offset="0"/>
+        <GradientStop Color="#FF00E5FF" Offset="0.22"/>
+        <GradientStop Color="#FF00A8C4" Offset="0.55"/>
+        <GradientStop Color="#FF005870" Offset="0.82"/>
+        <GradientStop Color="#FF021520" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- 管道高光：顶部白色反光条 -->
@@ -222,5 +222,5 @@
                       ShadowDepth="2"
                       Direction="315"
                       Opacity="0.70"/>
-
 </ResourceDictionary>
+

@@ -1,4 +1,4 @@
-<Window
+﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -111,10 +111,8 @@
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="190" Canvas.Top="250" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="303" Canvas.Top="250" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </Canvas>
-            
-            
             <Canvas>
-                <Border Canvas.Left="115" Canvas.Top="382" Width="364" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Border Canvas.Left="100" Canvas.Top="382" Width="379" HorizontalAlignment="Center" VerticalAlignment="Top" >
 
                     <Border.Background>
 
@@ -133,7 +131,7 @@
 
                         <Line x:Name="liquidline18" 
                           X1="0" Y1="0" 
-                          Width="350"
+                          Width="365"
                           Height="6"
                           X2="360" 
                           Y2="0" 
@@ -150,37 +148,6 @@
                     </Border>
 
                 </Border>
-                <!-- ★★★ 新增：左端弯头 ╰ border1竖直→border18水平 ★★★ -->
-                <!-- 管壁层 -->
-                <Path Canvas.Left="85" Canvas.Top="367"
-                    StrokeThickness="8"
-                    StrokeStartLineCap="Flat"
-                    StrokeEndLineCap="Flat"
-                    Data="M 0,0 A 15,15 0 0 1 15,15">
-                    <Path.Stroke>
-                        <LinearGradientBrush StartPoint="0.5,0"
-                             EndPoint="0.5,1">
-                            <GradientStop Color="#FF010A14" Offset="0"/>
-                            <GradientStop Color="#FF0D3A50" Offset="0.10"/>
-                            <GradientStop Color="#FF00B8D0" Offset="0.28"/>
-                            <GradientStop Color="#FF006878" Offset="0.55"/>
-                            <GradientStop Color="#FF003040" Offset="0.82"/>
-                            <GradientStop Color="#FF001420" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Path.Stroke>
-                </Path>
-
-                <!-- 流体层（虚线动画） -->
-                <Path x:Name="elbowFluid18L"
-                        Canvas.Left="85" Canvas.Top="367"
-                        Stroke="#00a3af"
-                        StrokeThickness="5"
-                        Opacity="0.85"
-                        StrokeDashArray="2,3"
-                        StrokeDashCap="Round"
-                        StrokeStartLineCap="Round"
-                        StrokeEndLineCap="Round"
-                        Data="M 0,0 A 15,15 0 0 1 15,15"/>
                 <Image Panel.ZIndex="0" Stretch="UniformToFill" Source="/Resources/右箭头.png" Width="12" Height="10" Canvas.Left="373" Canvas.Top="381" RenderTransformOrigin="0.028,0.467" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image.RenderTransform>
                         <TransformGroup>
@@ -2243,7 +2210,146 @@
                 <TextBox Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="差压" Margin="74,25,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
                 <TextBox Name="PDT701" Foreground="#7ECFDE" FontSize="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="" Margin="74,40,0,0"     Width="40" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
             </Grid>
+            <!-- ════════════════════════════════════════════════
+                 ★ 管路弯头 Canvas（PipelineUpgrade v2.1 注入）
+                 Grid.RowSpan="2" 覆盖全区，Panel.ZIndex="20" 置顶
+                 坐标系：800×450，管道厚度~8px，弯头半径8px
+            ════════════════════════════════════════════════ -->
+            <Canvas Grid.RowSpan="2" Panel.ZIndex="20" IsHitTestVisible="False">
 
+                <!-- ─── 吸附回路（顶部大矩形管路）四角弯头 ─── -->
+
+                <!-- 左上：水平管→竖管（向右向下出） -->
+                <Path Canvas.Left="162" Canvas.Top="188"
+                      Data="M 0,0 L 8,0 A 8,8 0 0,1 16,8 L 16,16 L 8,16 A 8,8 0 0,0 0,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF006888" Offset="0.08"/>
+                        <GradientStop Color="#FF00E5FF" Offset="0.25"/>
+                        <GradientStop Color="#FF00A8C4" Offset="0.50"/>
+                        <GradientStop Color="#FF005870" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#5000E5FF"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 右上：水平管→竖管（向左向下出） -->
+                <Path Canvas.Left="722" Canvas.Top="188"
+                      Data="M 16,0 L 8,0 A 8,8 0 0,0 0,8 L 0,16 L 8,16 A 8,8 0 0,1 16,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF006888" Offset="0.08"/>
+                        <GradientStop Color="#FF00E5FF" Offset="0.25"/>
+                        <GradientStop Color="#FF00A8C4" Offset="0.50"/>
+                        <GradientStop Color="#FF005870" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#5000E5FF"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 左下：竖管→水平管（向右向上出） -->
+                <Path Canvas.Left="162" Canvas.Top="376"
+                      Data="M 0,16 L 8,16 A 8,8 0 0,0 16,8 L 16,0 L 8,0 A 8,8 0 0,1 0,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF006888" Offset="0.08"/>
+                        <GradientStop Color="#FF00E5FF" Offset="0.25"/>
+                        <GradientStop Color="#FF00A8C4" Offset="0.50"/>
+                        <GradientStop Color="#FF005870" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#5000E5FF"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 右下：竖管→水平管（向左向上出） -->
+                <Path Canvas.Left="722" Canvas.Top="376"
+                      Data="M 16,16 L 8,16 A 8,8 0 0,1 0,8 L 0,0 L 8,0 A 8,8 0 0,0 16,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF006888" Offset="0.08"/>
+                        <GradientStop Color="#FF00E5FF" Offset="0.25"/>
+                        <GradientStop Color="#FF00A8C4" Offset="0.50"/>
+                        <GradientStop Color="#FF005870" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#5000E5FF"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- ─── 脱附回路（中部横管）弯头 ─── -->
+
+                <!-- 中段左上 -->
+                <Path Canvas.Left="162" Canvas.Top="246"
+                      Data="M 0,0 L 8,0 A 8,8 0 0,1 16,8 L 16,16 L 8,16 A 8,8 0 0,0 0,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF005C6A" Offset="0.08"/>
+                        <GradientStop Color="#FF00D0E8" Offset="0.25"/>
+                        <GradientStop Color="#FF009AB0" Offset="0.50"/>
+                        <GradientStop Color="#FF004A60" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#4000D0E8"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 中段右上 -->
+                <Path Canvas.Left="722" Canvas.Top="246"
+                      Data="M 16,0 L 8,0 A 8,8 0 0,0 0,8 L 0,16 L 8,16 A 8,8 0 0,1 16,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF005C6A" Offset="0.08"/>
+                        <GradientStop Color="#FF00D0E8" Offset="0.25"/>
+                        <GradientStop Color="#FF009AB0" Offset="0.50"/>
+                        <GradientStop Color="#FF004A60" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#4000D0E8"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 底部脱附管左下 -->
+                <Path Canvas.Left="162" Canvas.Top="454"
+                      Data="M 0,16 L 8,16 A 8,8 0 0,0 16,8 L 16,0 L 8,0 A 8,8 0 0,1 0,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF005C6A" Offset="0.08"/>
+                        <GradientStop Color="#FF00D0E8" Offset="0.25"/>
+                        <GradientStop Color="#FF009AB0" Offset="0.50"/>
+                        <GradientStop Color="#FF004A60" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#4000D0E8"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+                <!-- 底部脱附管右下 -->
+                <Path Canvas.Left="722" Canvas.Top="454"
+                      Data="M 16,16 L 8,16 A 8,8 0 0,1 0,8 L 0,0 L 8,0 A 8,8 0 0,0 16,8 Z"
+                      Effect="{StaticResource ElbowGlowEffect}">
+                    <Path.Fill><LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FF061828" Offset="0"/>
+                        <GradientStop Color="#FF005C6A" Offset="0.08"/>
+                        <GradientStop Color="#FF00D0E8" Offset="0.25"/>
+                        <GradientStop Color="#FF009AB0" Offset="0.50"/>
+                        <GradientStop Color="#FF004A60" Offset="0.78"/>
+                        <GradientStop Color="#FF021520" Offset="1"/>
+                    </LinearGradientBrush></Path.Fill>
+                    <Path.Stroke><SolidColorBrush Color="#4000D0E8"/></Path.Stroke>
+                    <Path.StrokeThickness>0.8</Path.StrokeThickness>
+                </Path>
+
+            </Canvas>
         </Grid>
 
     </Viewbox>
@@ -2253,5 +2359,4 @@
 
 
 </Window>
-
 

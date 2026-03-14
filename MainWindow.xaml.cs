@@ -485,11 +485,19 @@ public partial class MainWindow : Window
         string id18 = flowingLineController.AddFlowingEffect( liquidLine18 , duration: 2 , speed: 10 );
         _animationIds.Add( id18 );
 
+        // 弯头流体动画（和直管保持同速同方向）
+        var elbowAnim18L = new DoubleAnimation(20, 0,
+            TimeSpan.FromSeconds(1.5))
+        {
+            RepeatBehavior = RepeatBehavior.Forever
+        };
+        elbowFluid18L.BeginAnimation(
+            Shape.StrokeDashOffsetProperty, elbowAnim18L);
 
         #endregion
 
         #region OPC注册
-        
+
 
         SetupDataBinding( TT603 ,"TT601温度传感1数据" , "F1" );
         SetupDataBinding( TT601, "TT603温度传感2数据" , "F1" );
